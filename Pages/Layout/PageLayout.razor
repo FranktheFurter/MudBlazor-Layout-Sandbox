@@ -1,0 +1,76 @@
+@using MudServer.Pages.Layout.Components
+
+<div id="main-container">
+    <div class="top">
+        <div class="top-left">
+            <SideBar />
+        </div>
+        <div class="top-right">
+            <Content />
+        </div>
+    </div>
+    <div class="bot">
+        <div class="bot-left">
+            <BotPanelLeft />
+        </div>
+        <div class="bot-right">
+            <BotPanelRight />
+        </div>
+    </div>
+
+</div>
+
+<style>
+    #main-container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 1fr;
+        grid-gap: 0px 0px;
+    }
+
+    .top {
+
+        grid-column: 1;
+        grid-row: 1;
+        overflow: auto;
+
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+    }
+
+    .top-left {
+        grid-column: 1;
+        grid-row: 1;
+        overflow: auto;
+    }
+
+    .top-right {
+        grid-column: 2;
+        grid-row: 1;
+        overflow: auto;
+    }
+
+    .bot {
+        grid-column: 1;
+        grid-row: 2;
+        overflow: auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .bot-left {
+        grid-column: 1;
+        grid-row: 1;
+        overflow: auto;
+    }
+
+    .bot-right {
+        grid-column: 2;
+        grid-row: 1;
+        overflow: auto;
+    }
+</style>
