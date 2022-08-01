@@ -3,17 +3,29 @@
 <div id="main-container">
     <div class="top">
         <div class="top-left">
+            <div class="sticky-header">
+                <p class="sticky-header">Header SideBar</p>
+            </div>
             <SideBar />
         </div>
         <div class="top-right">
+            <div class="sticky-header">
+                <p class="sticky-header">Header Content</p>
+            </div>
             <Content />
         </div>
     </div>
     <div class="bot">
         <div class="bot-left">
+            <div class="sticky-header">
+                <p class="sticky-header">Header Bottom Left</p>
+            </div>
             <BotPanelLeft />
         </div>
         <div class="bot-right">
+            <div class="sticky-header">
+                <p class="sticky-header">Header Bottom Right</p>
+            </div>
             <BotPanelRight />
         </div>
     </div>
@@ -27,6 +39,12 @@
         grid-template-columns: 1fr;
         grid-template-rows: 3fr 1fr;
         grid-gap: 0px 0px;
+    }
+
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        background-color: white
     }
 
     .top {
