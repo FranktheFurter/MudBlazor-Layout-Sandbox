@@ -26,12 +26,15 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "watch",
+            "label": "Watch -> Hotreload",
             "command": "dotnet",
             "type": "process",
+            "icon": {
+                "id": "debug"
+            },
             "args": [
                 "watch",
-                "run",
+                // "run",
                 "--project",
                 "${workspaceFolder}/MudServer.csproj"
             ],

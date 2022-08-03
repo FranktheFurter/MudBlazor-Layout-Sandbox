@@ -4,13 +4,31 @@
     <div class="top">
         <div class="top-left">
             <div class="sticky-header">
-                <p class="sticky-header">Header SideBar</p>
+                <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                    <MudButton Color="Color.Primary" Variant="Variant.Outlined">One</MudButton>
+                    <MudButton Color="Color.Warning" Variant="Variant.Outlined">Two</MudButton>
+                    <MudButton Color="Color.Secondary" Variant="Variant.Outlined">Three</MudButton>
+                </MudButtonGroup>
+
             </div>
             <SideBar />
         </div>
         <div class="top-right">
             <div class="sticky-header">
-                <p class="sticky-header">Header Content</p>
+                <MudPaper Elevation="25">
+                    <MudToolBar>
+                        <MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" Class="mr-5" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.Add" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.Edit" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.Remove" Color="Color.Inherit" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.Settings" Color="Color.Inherit" />
+                        <MudSpacer />
+                        <MudIconButton Icon="@Icons.Material.Outlined.Notifications" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.PushPin" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.PeopleAlt" />
+                        <MudIconButton Icon="@Icons.Material.Outlined.MoreVert" Color="Color.Inherit" />
+                    </MudToolBar>
+                </MudPaper>
             </div>
             <Content />
         </div>
@@ -18,13 +36,31 @@
     <div class="bot">
         <div class="bot-left">
             <div class="sticky-header">
-                <p class="sticky-header">Header Bottom Left</p>
+                <MudChipSet @bind-SelectedChip="selected" Filter="true" Mandatory="@mandatory">
+                    <MudChip Text="grey">Default</MudChip>
+                    <MudChip Text="purple" Color="Color.Primary">Primary</MudChip>
+                    <MudChip Text="pink" Color="Color.Secondary">Secondary</MudChip>
+                    <MudChip Text="blue" Color="Color.Info">Info</MudChip>
+                    <MudChip Text="green" Color="Color.Success">Success</MudChip>
+                    <MudChip Text="orange" Color="Color.Warning">Warning</MudChip>
+                    <MudChip Text="red" Color="Color.Error">Error</MudChip>
+                    <MudChip Text="black" Color="Color.Dark">Dark</MudChip>
+                </MudChipSet>
             </div>
             <BotPanelLeft />
         </div>
         <div class="bot-right">
             <div class="sticky-header">
-                <p class="sticky-header">Header Bottom Right</p>
+                <MudChipSet @bind-SelectedChip="selected" Filter="true" Mandatory="@mandatory">
+                    <MudChip Text="grey">Default</MudChip>
+                    <MudChip Text="purple" Color="Color.Primary">Primary</MudChip>
+                    <MudChip Text="pink" Color="Color.Secondary">Secondary</MudChip>
+                    <MudChip Text="blue" Color="Color.Info">Info</MudChip>
+                    <MudChip Text="green" Color="Color.Success">Success</MudChip>
+                    <MudChip Text="orange" Color="Color.Warning">Warning</MudChip>
+                    <MudChip Text="red" Color="Color.Error">Error</MudChip>
+                    <MudChip Text="black" Color="Color.Dark">Dark</MudChip>
+                </MudChipSet>
             </div>
             <BotPanelRight />
         </div>
@@ -92,3 +128,9 @@
         overflow: auto;
     }
 </style>
+
+@code
+{
+    bool mandatory = true;
+    MudChip selected;
+}

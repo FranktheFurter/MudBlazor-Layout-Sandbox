@@ -1,9 +1,31 @@
 <div style="width: 100 %; height: 100%">
-    <div style=" background-color: teal; ">
-        @for (int i = 0; i < 100; i++)
-        {
-            <MudText Typo="Typo.h3" GutterBottom="true">Sidebar</MudText>
-        }
+
+    <div style="">
+        <MudList Clickable="true" @bind-SelectedItem="selectedItem" @bind-SelectedValue="selectedValue" Color="_color">
+            <MudListSubheader>
+                Select Your Character:
+            </MudListSubheader>
+            <MudListItem Text="Neutral" Value="1" />
+            <MudListItem Text="Good">
+                <NestedList>
+                    <MudListItem Text="Frodo Baggins" Value="2" />
+                    <MudListItem Text="Harry Potter" Value="3" />
+                </NestedList>
+            </MudListItem>
+            <MudListItem Text="Evil">
+                <NestedList>
+                    <MudListItem Text="Sauron" Value="5" />
+                    <MudListItem Text="Voldemort" Value="6" />
+                    <MudListItem Text="Mckaragoz" Value="7" />
+                </NestedList>
+            </MudListItem>
+            <MudListItem Disabled="true" Text="Im not hero" Value="7" />
+        </MudList>
 
     </div>
 </div>
+@code {
+    MudListItem selectedItem;
+    object selectedValue = 1;
+    Color _color = Color.Primary;
+}
